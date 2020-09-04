@@ -10,3 +10,18 @@ class Post(models.Model):
 	text = models.TextField(max_length=1000)
 	image = models.ImageField(upload_to='blog_images/')
 		
+
+	def get_summary(self):
+		return self.text[:70]
+
+	def __str__(self):
+		return self.title
+
+	class Meta():
+		"""docstring for Meta"""
+		verbose_name = 'Статья'
+		verbose_name_plural = 'Статьи'
+			
+
+
+	
